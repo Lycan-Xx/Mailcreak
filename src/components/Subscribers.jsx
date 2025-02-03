@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Search, Plus, Trash2, Mail, Filter, Download } from 'lucide-react';
+import { Search, Plus, Trash2, Download } from 'lucide-react';
 import toast from 'react-hot-toast';
+import Switch from '@mui/material/Switch';
 
 function Subscribers() {
   const [subscribers, setSubscribers] = useState([
@@ -65,6 +66,20 @@ function Subscribers() {
     a.click();
     window.URL.revokeObjectURL(url);
     toast.success('Subscribers exported successfully!');
+  };
+
+  const handleToggle = (id) => {
+    setSubscribers(
+      subscribers.map(subscriber => {
+        if (subscriber.id === id) {
+          return {
+            ...subscriber,
+            status: subscriber.status === 'active' ? 'inactive' : 'active'
+          };
+        }
+        return subscriber;
+      })
+    );
   };
 
   return (
@@ -142,9 +157,14 @@ function Subscribers() {
                 <td className="px-6 py-4 text-sm text-white">{subscriber.lastOpened}</td>
                 <td className="px-6 py-4 text-sm text-white">{subscriber.openRate}</td>
                 <td className="px-6 py-4 text-right">
+                  <Switch
+                    checked={subscriber.status === 'active'}
+                    onChange={() => handleToggle(subscriber.id)}
+                    inputProps={{ 'aria-label': 'Toggle subscriber status' }}
+                  />
                   <button
                     onClick={() => handleDeleteSubscriber(subscriber.id)}
-                    className="text-red-400 hover:text-red-300 transition-colors"
+                    className="text-red-400 hover:text-red-300 transition-colors ml-4"
                   >
                     <Trash2 className="w-5 h-5" />
                   </button>

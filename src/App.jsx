@@ -1,5 +1,4 @@
 import React from 'react';
-import { Mail, Users, LayoutDashboard, Send, Settings2 } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
