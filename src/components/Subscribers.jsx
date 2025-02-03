@@ -8,7 +8,12 @@ function Subscribers() {
     { id: 1, email: 'john@example.com', name: 'John Doe', status: 'active', joinedDate: '2024-03-15', lastOpened: '2024-03-15', openRate: '85%' },
     { id: 2, email: 'jane@example.com', name: 'Jane Smith', status: 'active', joinedDate: '2024-03-14', lastOpened: '2024-03-14', openRate: '92%' },
     { id: 3, email: 'bob@example.com', name: 'Bob Johnson', status: 'inactive', joinedDate: '2024-03-13', lastOpened: '2024-03-10', openRate: '45%' },
-  ]);
+{ id: 4, email: 'sarah@example.com', name: 'Sarah Wilson', status: 'active', joinedDate: '2024-03-12', lastOpened: '2024-03-15', openRate: '78%' },
+{ id: 5, email: 'mike@example.com', name: 'Mike Thompson', status: 'inactive', joinedDate: '2024-03-11', lastOpened: '2024-03-13', openRate: '63%' },
+{ id: 6, email: 'emma@example.com', name: 'Emma Davis', status: 'active', joinedDate: '2024-03-10', lastOpened: '2024-03-14', openRate: '91%' },
+{ id: 7, email: 'alex@example.com', name: 'Alex Brown', status: 'inactive', joinedDate: '2024-03-09', lastOpened: '2024-03-11', openRate: '32%' },
+{ id: 8, email: 'lisa@example.com', name: 'Lisa Chen', status: 'active', joinedDate: '2024-03-08', lastOpened: '2024-03-15', openRate: '88%' },
+]);
   
   const [searchTerm, setSearchTerm] = useState('');
   const [showAddModal, setShowAddModal] = useState(false);
