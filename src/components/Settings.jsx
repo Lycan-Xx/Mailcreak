@@ -7,17 +7,19 @@ function Settings() {
   const navigate = useNavigate();
   // Initialize darkMode state from localStorage
   const [darkMode, setDarkMode] = useState(() => 
-    localStorage.getItem('darkMode') === 'true'
+    localStorage.getItem('theme') !== 'light'
   );
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   // Update darkMode in localStorage and apply class when changed
   useEffect(() => {
-    localStorage.setItem('darkMode', darkMode);
+    // Update both document class and localStorage
     if (darkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+      localStorage.setItem('theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+      localStorage.setItem('theme', 'light');
     }
   }, [darkMode]);
 
