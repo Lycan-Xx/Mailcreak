@@ -37,6 +37,13 @@ function NewsletterList({ newsletters, onDelete, onUpdate }) {
     return new Date(dateString).toLocaleString(undefined, options);
   };
 
+  const handleDelete = (id) => {
+    if (window.confirm('Are you sure you want to delete this newsletter?')) {
+      onDelete(id);
+      toast.success('Newsletter deleted successfully');
+    }
+  };
+
   const renderNewsletterItem = (newsletter) => (
     <div key={newsletter.id} className="bg-[#1e2128] p-6 rounded-xl">
       <div className="flex items-center justify-between mb-4">
@@ -112,6 +119,29 @@ function NewsletterList({ newsletters, onDelete, onUpdate }) {
     </div>
   );
 
+  const renderSentNewsletterItem = (newsletter) => (
+    <div key={newsletter.id} 
+         className="bg-[#1e2128] p-3 rounded-lg flex items-center justify-between hover:bg-[#262932] transition-colors">
+      <div className="flex-1">
+        <h4 className="text-white font-medium text-sm">{newsletter.title}</h4>
+        <div className="flex items-center gap-2 text-xs text-gray-400">
+          <span>{formatDateTime(newsletter.sentAt)}</span>
+          <span>•</span>
+          <span>{newsletter.stats.opens} opens</span>
+          <span>•</span>
+          <span>{newsletter.stats.clicks} clicks</span>
+        </div>
+      </div>
+      <button
+        onClick={() => handleDelete(newsletter.id)}
+        className="p-1.5 text-gray-400 hover:text-red-400 transition-colors"
+        title="Delete"
+      >
+        <Trash2 className="w-4 h-4" />
+      </button>
+    </div>
+  );
+
   return (
     <div className="p-8">
       <div className="flex justify-between items-center mb-8">
@@ -136,14 +166,14 @@ function NewsletterList({ newsletters, onDelete, onUpdate }) {
         )}
       </div>
 
-      <div>
-        <h2 className="text-2xl font-bold text-white mb-6">Sent Newsletters</h2>
+      <div className="mt-8">
+        <h2 className="text-xl font-bold text-white mb-4">Sent Newsletters</h2>
         {sentNewsletters.length > 0 ? (
-          <div className="grid gap-6">
-            {sentNewsletters.map(renderNewsletterItem)}
+          <div className="grid gap-2">
+            {sentNewsletters.map(renderSentNewsletterItem)}
           </div>
         ) : (
-          <p className="text-gray-400">No sent newsletters</p>
+          <p className="text-gray-400 text-sm">No sent newsletters</p>
         )}
       </div>
     </div>
