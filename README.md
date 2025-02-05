@@ -1,4 +1,3 @@
-```markdown
 # MailCreak - Newsletter Management Application
 
 MailCreak is a modern web application designed to streamline newsletter creation, subscriber management, and campaign performance tracking. Built with React, Tailwind CSS, and other modern web technologies, MailCreak offers a user-friendly interface and a suite of features to help you connect with your audience effectively.
@@ -98,4 +97,3 @@ Contributions are welcome! Please feel free to submit a pull request.
 ## License
 
 MIT
-```
