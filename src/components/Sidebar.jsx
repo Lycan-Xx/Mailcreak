@@ -40,7 +40,7 @@ function Sidebar() {
           {!isCollapsed && <h1 className="text-xl font-bold">MAILCREAK</h1>}
         </div>
         
-        <nav className="space-y-2">
+        <nav className="space-y-2 flex flex-col items-center">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -48,7 +48,7 @@ function Sidebar() {
                 isActive
                   ? 'bg-[#4fd1c5] text-[#13151a]'
                   : 'hover:bg-[#1a1d24] text-gray-300'
-              } ${isCollapsed ? 'justify-center' : ''}`
+              } ${isCollapsed ? 'justify-center w-12' : 'w-full'}`
             }
             title="Dashboard"
           >
@@ -63,7 +63,7 @@ function Sidebar() {
                 isActive
                   ? 'bg-[#4fd1c5] text-[#13151a]'
                   : 'hover:bg-[#1a1d24] text-gray-300'
-              } ${isCollapsed ? 'justify-center' : ''}`
+              } ${isCollapsed ? 'justify-center w-12' : 'w-full'}`
             }
             title="Subscribers"
           >
@@ -78,7 +78,7 @@ function Sidebar() {
                 isActive
                   ? 'bg-[#4fd1c5] text-[#13151a]'
                   : 'hover:bg-[#1a1d24] text-gray-300'
-              } ${isCollapsed ? 'justify-center' : ''}`
+              } ${isCollapsed ? 'justify-center w-12' : 'w-full'}`
             }
             title="Newsletters"
           >

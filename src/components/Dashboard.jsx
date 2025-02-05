@@ -108,7 +108,7 @@ function Dashboard() {
   ];
 
   return (
-    <div className="p-4 sm:p-8">
+    <div className="p-4 sm:p-8">	
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold text-white">Dashboard</h1>
         <div className="text-xs sm:text-sm text-gray-400 mt-2 sm:mt-0">
@@ -116,7 +116,7 @@ function Dashboard() {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-0">
         {stats.map((stat) => (
           <StatCard key={stat.label} {...stat} />
         ))}
