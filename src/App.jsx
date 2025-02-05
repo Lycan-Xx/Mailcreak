@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
@@ -7,6 +7,12 @@ import Newsletters from './components/Newsletters';
 import Settings from './components/Settings';
 
 function App() {
+  useEffect(() => {
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
   return (
     <Router>
       <div className="flex h-screen bg-[#1a1d24]">

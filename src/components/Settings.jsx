@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Moon, Sun, Lock, Trash2, FileText, Shield } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 function Settings() {
   const navigate = useNavigate();
-  const [darkMode, setDarkMode] = useState(true);
+  // Initialize darkMode state from localStorage
+  const [darkMode, setDarkMode] = useState(() => 
+    localStorage.getItem('darkMode') === 'true'
+  );
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+
+  // Update darkMode in localStorage and apply class when changed
+  useEffect(() => {
+    localStorage.setItem('darkMode', darkMode);
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
 
   const handleDarkModeToggle = () => {
     setDarkMode(!darkMode);
-    document.documentElement.classList.toggle('dark');
     toast.success(`${darkMode ? 'Light' : 'Dark'} mode enabled`);
   };
 
@@ -26,8 +38,8 @@ function Settings() {
 
       <div className="space-y-6 max-w-2xl">
         {/* Appearance */}
-        <div className="bg-[#1e2128] p-6 rounded-xl">
-          <h2 className="text-xl font-semibold text-white mb-4">Appearance</h2>
+        <div className="bg-[#1e2128] dark:bg-[#13151a] p-6 rounded-xl">
+          <h2 className="text-xl font-semibold text-white dark:text-gray-100 mb-4">Appearance</h2>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               {darkMode ? <Moon className="w-5 h-5 text-[#4fd1c5]" /> : <Sun className="w-5 h-5 text-[#4fd1c5]" />}
