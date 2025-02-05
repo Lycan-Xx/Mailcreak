@@ -7,18 +7,18 @@ function StatCard({ icon: Icon, label, value, change, changeType }) {
   const Arrow = isPositive ? ArrowUp : ArrowDown;
   
   return (
-    <div className="bg-[#1e2128] p-6 rounded-xl">
-      <div className="flex items-center justify-between mb-4">
-        <div className="bg-[#4fd1c5] p-3 rounded-lg">
-          <Icon className="w-6 h-6 text-[#13151a]" />
+    <div className="bg-[#1e2128] p-4 sm:p-6 rounded-xl">
+      <div className="flex items-center justify-between mb-3 sm:mb-4">
+        <div className="bg-[#4fd1c5] p-2 sm:p-3 rounded-lg">
+          <Icon className="w-4 h-4 sm:w-6 sm:h-6 text-[#13151a]" />
         </div>
-        <span className={`flex items-center gap-1 ${isPositive ? 'text-[#4fd1c5]' : 'text-red-400'}`}>
-          <Arrow className="w-4 h-4" />
+        <span className={`flex items-center gap-1 text-sm sm:text-base ${isPositive ? 'text-[#4fd1c5]' : 'text-red-400'}`}>
+          <Arrow className="w-3 h-3 sm:w-4 sm:h-4" />
           {change}
         </span>
       </div>
-      <h3 className="text-gray-400 text-sm">{label}</h3>
-      <p className="text-2xl font-bold text-white mt-1">{value}</p>
+      <h3 className="text-xs sm:text-sm text-gray-400">{label}</h3>
+      <p className="text-lg sm:text-2xl font-bold text-white mt-1">{value}</p>
     </div>
   );
 }
@@ -31,16 +31,21 @@ function RecentActivity() {
   ];
 
   return (
-    <div className="bg-[#1e2128] p-6 rounded-xl mt-6">
-      <h2 className="text-xl font-bold text-white mb-4">Recent Activity</h2>
-      <div className="space-y-4">
+    <div className="bg-[#1e2128] p-4 sm:p-6 rounded-xl mt-4 sm:mt-6">
+      <h2 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Recent Activity</h2>
+      <div className="divide-y divide-gray-700">
         {activities.map((activity) => (
-          <div key={activity.id} className="flex items-center gap-4 text-gray-300">
-            <div className={`w-2 h-2 rounded-full ${
-              activity.type === 'subscriber' ? 'bg-[#4fd1c5]' : 'bg-purple-500'
-            }`} />
-            <p className="flex-1">{activity.message}</p>
-            <span className="text-sm text-gray-500">{activity.time}</span>
+          <div 
+            key={activity.id} 
+            className="flex items-center gap-3 sm:gap-4 text-gray-300 py-2.5 sm:py-3 px-2 hover:bg-[#282c34] transition-colors rounded-lg cursor-pointer text-sm sm:text-base"
+          >
+            <div 
+              className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                activity.type === 'subscriber' ? 'bg-[#4fd1c5]' : 'bg-purple-500'
+              }`} 
+            />
+            <p className="flex-1 truncate">{activity.message}</p>
+            <span className="text-xs sm:text-sm text-gray-500 flex-shrink-0">{activity.time}</span>
           </div>
         ))}
       </div>
@@ -56,13 +61,13 @@ function NewsletterMetrics() {
   ];
 
   return (
-    <div className="bg-[#1e2128] p-6 rounded-xl mt-6">
-      <h2 className="text-xl font-bold text-white mb-4">Newsletter Metrics</h2>
-      <div className="grid grid-cols-3 gap-4">
+    <div className="bg-[#1e2128] p-4 sm:p-6 rounded-xl mt-4 sm:mt-6">
+      <h2 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Newsletter Metrics</h2>
+      <div className="grid grid-cols-3 gap-2 sm:gap-4">
         {metrics.map((metric) => (
-          <div key={metric.label} className="text-center">
-            <p className="text-2xl font-bold text-[#4fd1c5]">{metric.value}</p>
-            <p className="text-sm text-gray-400">{metric.label}</p>
+          <div key={metric.label} className="text-center p-2 sm:p-3">
+            <p className="text-xl sm:text-2xl font-bold text-[#4fd1c5]">{metric.value}</p>
+            <p className="text-xs sm:text-sm text-gray-400">{metric.label}</p>
           </div>
         ))}
       </div>
@@ -72,21 +77,21 @@ function NewsletterMetrics() {
 
 function QuickActions() {
   return (
-    <div className="bg-[#1e2128] p-6 rounded-xl mt-6">
-      <h2 className="text-xl font-bold text-white mb-4">Quick Actions</h2>
-      <div className="grid grid-cols-2 gap-4">
+    <div className="bg-[#1e2128] p-4 sm:p-6 rounded-xl mt-4 sm:mt-6">
+      <h2 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Quick Actions</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <Link
           to="/newsletters/new"
-          className="flex items-center justify-center gap-2 p-3 bg-[#4fd1c5] text-[#13151a] rounded-lg hover:bg-[#38b2ac] transition-colors"
+          className="flex items-center justify-center gap-2 p-2.5 sm:p-3 text-sm sm:text-base bg-[#4fd1c5] text-[#13151a] rounded-lg hover:bg-[#38b2ac] transition-colors"
         >
-          <Mail className="w-5 h-5" />
+          <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
           Create Newsletter
         </Link>
         <Link
           to="/subscribers"
-          className="flex items-center justify-center gap-2 p-3 bg-[#282c34] text-white rounded-lg hover:bg-[#323842] transition-colors"
+          className="flex items-center justify-center gap-2 p-2.5 sm:p-3 text-sm sm:text-base bg-[#282c34] text-white rounded-lg hover:bg-[#323842] transition-colors"
         >
-          <Users className="w-5 h-5" />
+          <Users className="w-4 h-4 sm:w-5 sm:h-5" />
           Manage Subscribers
         </Link>
       </div>
@@ -103,22 +108,22 @@ function Dashboard() {
   ];
 
   return (
-    <div className="p-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-white">Dashboard</h1>
-        <div className="text-sm text-gray-400">
+    <div className="p-4 sm:p-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-white">Dashboard</h1>
+        <div className="text-xs sm:text-sm text-gray-400 mt-2 sm:mt-0">
           Last updated: {new Date().toLocaleString()}
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {stats.map((stat) => (
           <StatCard key={stat.label} {...stat} />
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-        <div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+        <div className="space-y-4 sm:space-y-6">
           <RecentActivity />
           <QuickActions />
         </div>
