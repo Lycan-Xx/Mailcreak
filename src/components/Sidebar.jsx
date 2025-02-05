@@ -21,9 +21,6 @@ function Sidebar() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Update icon sizes and responsive behavior
-  const iconSize = "w-6 h-6"; // Increased from w-5 h-5
-
   return (
     <div className={`relative bg-[#13151a] text-white transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
       <button
@@ -51,11 +48,11 @@ function Sidebar() {
                 isActive
                   ? 'bg-[#4fd1c5] text-[#13151a]'
                   : 'hover:bg-[#1a1d24] text-gray-300'
-              } ${isCollapsed ? 'justify-center w-14 h-14' : ''}`
+              } ${isCollapsed ? 'justify-center' : ''}`
             }
             title="Dashboard"
           >
-            <LayoutDashboard className={iconSize} />
+            <LayoutDashboard className="w-5 h-5" />
             {!isCollapsed && <span>Dashboard</span>}
           </NavLink>
           
@@ -66,11 +63,11 @@ function Sidebar() {
                 isActive
                   ? 'bg-[#4fd1c5] text-[#13151a]'
                   : 'hover:bg-[#1a1d24] text-gray-300'
-              } ${isCollapsed ? 'justify-center w-14 h-14' : ''}`
+              } ${isCollapsed ? 'justify-center' : ''}`
             }
             title="Subscribers"
           >
-            <Users className={iconSize} />
+            <Users className="w-5 h-5" />
             {!isCollapsed && <span>Subscribers</span>}
           </NavLink>
           
@@ -81,11 +78,11 @@ function Sidebar() {
                 isActive
                   ? 'bg-[#4fd1c5] text-[#13151a]'
                   : 'hover:bg-[#1a1d24] text-gray-300'
-              } ${isCollapsed ? 'justify-center w-14 h-14' : ''}`
+              } ${isCollapsed ? 'justify-center' : ''}`
             }
             title="Newsletters"
           >
-            <Send className={iconSize} />
+            <Send className="w-5 h-5" />
             {!isCollapsed && <span>Newsletters</span>}
           </NavLink>
         </nav>
@@ -98,11 +95,11 @@ function Sidebar() {
                 isActive
                   ? 'bg-[#4fd1c5] text-[#13151a]'
                   : 'hover:bg-[#1a1d24] text-gray-300'
-              } ${isCollapsed ? 'justify-center w-14 h-14' : ''}`
+              } ${isCollapsed ? 'justify-center w-12' : 'w-full'}`
             }
             title="Settings"
           >
-            <Settings2 className={iconSize} />
+            <Settings2 className="w-5 h-5" />
             {!isCollapsed && <span>Settings</span>}
           </NavLink>
         </div>

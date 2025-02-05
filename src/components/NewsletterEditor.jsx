@@ -30,15 +30,15 @@ function NewsletterEditor({ isNew = false, onSave, newsletters = [] }) {
   };
 
   return (
-    <div className="p-8">
-      <div className="flex items-center gap-4 mb-8">
+    <div className="p-4 md:p-8">
+      <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-8">
         <button
           onClick={() => navigate('/newsletters')}
           className="p-2 text-gray-400 hover:text-white transition-colors"
         >
           <ArrowLeft className="w-6 h-6" />
         </button>
-        <h1 className="text-3xl font-bold text-white">
+        <h1 className="text-2xl md:text-3xl font-bold text-white">
           {isNew ? 'Create Newsletter' : 'Edit Newsletter'}
         </h1>
       </div>
@@ -71,17 +71,17 @@ function NewsletterEditor({ isNew = false, onSave, newsletters = [] }) {
           />
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4">
           <button
             type="button"
             onClick={() => navigate('/newsletters')}
-            className="px-4 py-2 text-gray-300 hover:text-white transition-colors"
+            className="order-last md:order-first px-4 py-2 text-gray-300 hover:text-white transition-colors"
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-[#4fd1c5] text-[#13151a] rounded-lg hover:bg-[#38b2ac] transition-colors"
+            className="flex-1 md:flex-none px-4 py-2 bg-[#4fd1c5] text-[#13151a] rounded-lg hover:bg-[#38b2ac] transition-colors"
           >
             Save as Draft
           </button>
@@ -93,7 +93,7 @@ function NewsletterEditor({ isNew = false, onSave, newsletters = [] }) {
               toast.success('Newsletter published successfully!');
               navigate('/newsletters');
             }}
-            className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+            className="flex-1 md:flex-none px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
           >
             Publish
           </button>
