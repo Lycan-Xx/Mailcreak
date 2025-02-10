@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import Subscribers from './components/Subscribers';
@@ -22,8 +22,8 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/subscribers" element={<Subscribers />} />
             <Route path="/newsletters/*" element={<Newsletters />} />
-			<Route path="/settings" element={<Settings />} />
-            <Route path="*" element={<div>Not Found</div>} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
       </div>
