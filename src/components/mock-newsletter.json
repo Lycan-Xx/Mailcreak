@@ -1,0 +1,70 @@
+{
+	"newsletters": [
+		{
+			"id": 1,
+			"title": "March Tech Updates 2024",
+			"content": "<h2>Latest Technology Trends</h2><p>In this month's newsletter, we'll explore the latest developments in AI and machine learning...</p>",
+			"status": "published",
+			"createdAt": "2024-03-15T08:00:00Z",
+			"updatedAt": "2024-03-15T10:30:00Z",
+			"scheduledAt": null,
+			"sentAt": null,
+			"deletedAt": null
+		},
+		{
+			"id": 2,
+			"title": "Weekly Developer Digest #45",
+			"content": "<h2>This Week in Development</h2><p>Breaking down the most important updates in web development...</p>",
+			"status": "draft",
+			"createdAt": "2024-03-14T15:20:00Z",
+			"updatedAt": "2024-03-14T16:45:00Z",
+			"scheduledAt": null,
+			"sentAt": null,
+			"deletedAt": null
+		},
+		{
+			"id": 3,
+			"title": "Product Launch Announcement",
+			"content": "<h2>Introducing Our New Feature</h2><p>We're excited to announce the launch of our latest feature...</p>",
+			"status": "scheduled",
+			"createdAt": "2024-03-13T11:00:00Z",
+			"updatedAt": "2024-03-13T14:30:00Z",
+			"scheduledAt": "2024-03-20T09:00:00Z",
+			"sentAt": null,
+			"deletedAt": null
+		},
+		{
+			"id": 4,
+			"title": "Monthly Community Spotlight",
+			"content": "<h2>Celebrating Our Community</h2><p>Highlighting the amazing projects and contributions from our community members...</p>",
+			"status": "published",
+			"createdAt": "2024-03-12T09:15:00Z",
+			"updatedAt": "2024-03-12T11:30:00Z",
+			"scheduledAt": null,
+			"sentAt": null,
+			"deletedAt": null
+		},
+		{
+			"id": 5,
+			"title": "Q2 2024 Roadmap",
+			"content": "<h2>Our Plans for Q2</h2><p>An overview of our upcoming features and improvements...</p>",
+			"status": "draft",
+			"createdAt": "2024-03-11T13:45:00Z",
+			"updatedAt": "2024-03-11T15:20:00Z",
+			"scheduledAt": null,
+			"sentAt": null,
+			"deletedAt": null
+		},
+		{
+			"id": 6,
+			"title": "Security Update Brief",
+			"content": "<h2>Important Security Updates</h2><p>Critical information about recent security improvements and best practices...</p>",
+			"status": "published",
+			"createdAt": "2024-03-10T10:30:00Z",
+			"updatedAt": "2024-03-10T12:15:00Z",
+			"scheduledAt": null,
+			"sentAt": null,
+			"deletedAt": null
+		}
+	]
+}
